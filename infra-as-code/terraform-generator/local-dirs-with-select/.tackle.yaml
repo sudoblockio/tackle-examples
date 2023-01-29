@@ -6,8 +6,10 @@ names:
 
 # A list to iterate over (see Alternate)
 projects:
-  - project-a
-  - project-b
+  ->: checkbox
+  choices:
+    - project-a
+    - project-b
 
 # Render the output looping through projects
 gen->: generate templates/main.tf.tpl {{item}}/main.tf --for projects
