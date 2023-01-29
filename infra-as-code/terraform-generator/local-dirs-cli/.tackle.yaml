@@ -1,0 +1,17 @@
+
+
+update_tf<-:
+  help: Render a main.tf file to some output
+
+  # Some rendering context
+  names:
+    - foo
+    - bar
+
+  # input hook
+  project->: input --default .
+
+  args: ['project']
+  exec:
+    # Render to the project output
+    gen->: generate templates/main.tf.tpl {{project}}/main.tf

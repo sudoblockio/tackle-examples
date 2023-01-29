@@ -1,0 +1,19 @@
+
+# Some rendering context
+names:
+  - foo
+  - bar
+
+# A list to iterate over (see Alternate)
+projects:
+  ->: checkbox
+  choices:
+    - project-a
+    - project-b
+
+# Render the output looping through projects
+gen->: generate templates/main.tf.tpl {{item}}/main.tf --for projects
+
+# Alternate
+#gen project a->: generate templates/main.tf.tpl project-a/main.tf
+#gen project b->: generate templates/main.tf.tpl project-b/main.tf

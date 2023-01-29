@@ -1,0 +1,7 @@
+
+
+names:
+  - foo
+  - bar
+
+call remote->: generate templates/main.tf.tpl {{item}}/main.tf --for ['project-a','project-b']
